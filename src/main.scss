@@ -1,18 +1,24 @@
+@import "./styles/basic";
+@import "./styles/variables";
+@import "./styles/mixins";
 body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background: rgb(252, 32, 32);
+    background-image: url("static/images/rect3780.png");  
+    background-color: $very-dark-blue;
+    background-repeat: no-repeat;
+    background-size: contain;  
+    background-attachment: fixed;
+    background-position: center center;
+    color: white; 
+    font-family: $font-body;
+    font-size: $font-size;
+    font-weight: $font-w-body-normal;
     h1{
         background: orangered;
         color:white
     }
 }
 
-.containerMenu{
-    background: salmon;
-    height: 200px;
-    width: 100%;
-}
-@import "./styles/variables";
+@import "./styles/header";
+@import "./styles/home";
 @import "./styles/menu";
+@import "./styles/contact"

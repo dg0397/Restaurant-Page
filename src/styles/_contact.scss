@@ -1,0 +1,48 @@
+.containerContact{
+    .container__contact__info{
+        width: 90%;
+        margin: 0 auto;
+        text-align: left;
+        @include logo(50%,200px,150px);
+        .contact__info{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            margin: 1rem 0;
+            .container__icon{
+                width: 5%;
+                margin-right: 1rem;
+                min-width: 21px;
+                img{
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                }
+            }
+            p{
+                width: 90%;
+            }
+        }
+    }
+    .social__media__icons{
+        margin: 3rem auto;
+        text-align: center;
+        & > *{
+    
+            margin-right: .5rem;
+            padding: .8rem;
+            color:white;
+            border: 1px solid white;
+            border-radius:50%;
+            transition: all .25s ease;
+            box-shadow: 0px 9px 16px #0101012a;
+            font-size: 16px;
+    
+            i{
+                width: 16px;
+                height: 16px
+            }
+        }
+    }
+}

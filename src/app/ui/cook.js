@@ -58,3 +58,26 @@ export function createSocialMediaIcons(content,parent){
         addElement(a,parent);
     }
 }
+export function createMenu(content,parent){
+    for(let obj of content){
+        let item = createElement("div", {"class":"category"},obj.strCategory);
+        addElement(item,parent);
+    }
+}
+
+export function createMenuDishes(content,parent){
+    for(let obj of content){
+        let containerDish = createElement("div",{"id":obj.idMeal,"class":"dish"});
+        let containerImg = createElement("div",{"class":"container__img"});
+        let img = createElement("img",{"src":obj.strMealThumb});
+        let name = createElement("h3",{"class":"name"},obj.strMeal);
+
+        addElement(img,containerImg);
+
+        
+        addElement(containerImg,containerDish);
+        addElement(name,containerDish);
+
+        addElement(containerDish,parent);
+    }
+}
