@@ -19,6 +19,8 @@ export class UI {
         this.categories; // categories menu (beef)
         this.containerDishes; // container of dishes;
         this.dishes;
+        this.flag = true;
+        this.dish;
     }
     setup(){
         this.navbar = header();
@@ -32,7 +34,7 @@ export class UI {
         switch(id){
             case "menu":
                 addElement(this.menuDishes,this.content);
-                this.renderDishes();
+                if(this.flag){this.renderDishes()}else{return};
                 break;
             case "home":
                 addElement(this.homeMain,this.content);
@@ -60,21 +62,36 @@ export class UI {
         }));
     }
     renderDishes(){
+       // console.log("hey dishes");
         this.categories = document.querySelectorAll('.category');
-        console.log(this.categories);
+        //console.log(this.categories);
 
         this.categories.forEach(category => {
             category.addEventListener("click", async (e)=>{
               
               this.dishes = await connection.fetchDishes(e.target.textContent);
-              console.log(this.dishes);
+             // console.log(this.dishes);
               //menu.cleanMenu(this.menuDishes);
-              console.log("hey");
+             // console.log("hey");
               removeElement(this.menuDishes);
               this.containerDishes = menu.renderDishes(this.dishes);
-              console.log(this.containerDishes);
+             // console.log(this.containerDishes);
               addElement(this.containerDishes,this.content);
-            })
+
+              this.flag = false;
+
+              this.containerDishes.querySelectorAll("button").
+                    forEach( dish => { 
+                        dish.addEventListener("click", async (e) =>{
+                            let dish = await connection.fetchDish(e.target.id);
+                            console.log(dish);
+
+                            this.dish = menu.renderDish(dish);
+
+                            addElement(this.dish,this.content);
+                        })
+                    });
+            });
         }); 
     }
 }

@@ -1,4 +1,4 @@
-import {createElement,addElement,createList,createMenu,removeElement,createMenuDishes} from "./cook";
+import {createElement,addElement,createList,createMenu,removeElement,createMenuDishes,createDish} from "./cook";
 
 class Menu{
     constructor(){
@@ -20,6 +20,11 @@ class Menu{
         const parent = createElement("div",{"class":"dishes"});
         createMenuDishes(dishes,parent);
 
+        return parent;
+    }
+    renderDish(dish){
+        const parent = createElement("div",{"class":"showDish"});
+        createDish(dish,parent);
         return parent;
     }
 

@@ -12,13 +12,15 @@ body{
     font-family: $font-body;
     font-size: $font-size;
     font-weight: $font-w-body-normal;
-    h1{
-        background: orangered;
-        color:white
+    min-width: 320px;
+    @media screen and(min-width:720px) {
+        background-image: url("static/images/background.png");
+        background-size: cover;
     }
 }
 
 @import "./styles/header";
 @import "./styles/home";
 @import "./styles/menu";
-@import "./styles/contact"
+@import "./styles/contact";
+@import "./styles/dish";

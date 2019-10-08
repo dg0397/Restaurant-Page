@@ -20,6 +20,14 @@ export class Connection {
         dishes.push(...plates.meals.slice(0,(plates.meals.length/2)))
         return  dishes; 
     }
+    async fetchDish(id){
+        let url = `${this.url}lookup.php?i=${id}`;
+
+        const dish = await fetch(url)
+                            .then(data => data.json());
+
+        return dish.meals[0];
+    }
 }
 
 export let connection = new Connection();

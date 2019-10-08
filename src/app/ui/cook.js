@@ -67,17 +67,50 @@ export function createMenu(content,parent){
 
 export function createMenuDishes(content,parent){
     for(let obj of content){
-        let containerDish = createElement("div",{"id":obj.idMeal,"class":"dish"});
+        let containerDish = createElement("div",{"class":"dish"});
         let containerImg = createElement("div",{"class":"container__img"});
         let img = createElement("img",{"src":obj.strMealThumb});
         let name = createElement("h3",{"class":"name"},obj.strMeal);
+        let btn = createElement("button",{"id":obj.idMeal,"class":"button"},"Select");
+        
+        //btn.addEventListener("click",(e)=>{
+        //    console.log(e.target.id);
+        //})
 
         addElement(img,containerImg);
 
         
         addElement(containerImg,containerDish);
         addElement(name,containerDish);
+        addElement(btn,containerDish);
 
         addElement(containerDish,parent);
     }
+}
+
+export function createDish(content,parent){
+    
+    let containerDish = createElement("div",{"class":"container__dish"})
+    let containerImg = createElement("div",{"class":"container__img"});
+    let img = createElement("img",{"src":content.strMealThumb});
+    let name = createElement("h3",{"class":"name"},content.strMeal);
+    let p = createElement("p","","Ingredients:");
+    let list = createElement("ul",{"class":"ingredients"});
+    
+    let i = 1 
+    while(content[`strIngredient${i}`]){
+        let li = createElement("li",{"class":"ingredient"},content[`strIngredient${i}`]);
+        addElement(li,list);
+        i++;
+    }
+
+    addElement(img,containerImg);
+
+    addElement(containerImg,containerDish);
+    addElement(name,containerDish);
+    addElement(p,containerDish);
+    addElement(list,containerDish);
+
+    addElement(containerDish,parent);
+    
 }

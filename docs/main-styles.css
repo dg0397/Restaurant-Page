@@ -23,11 +23,14 @@ body {
   font-family: "Barlow", sans-serif;
   font-size: 20px;
   font-weight: 400;
+  min-width: 320px;
 }
 
-body h1 {
-  background: orangered;
-  color: white;
+@media screen and (min-width: 720px) {
+  body {
+    background-image: url(static/images/background.png);
+    background-size: cover;
+  }
 }
 
 /*HEADER*/
@@ -135,6 +138,7 @@ body h1 {
   box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.212);
   transition: all 1s ease;
   transform: translateY(-200%);
+  max-width: 360px;
 }
 
 #header #nav .menu li {
@@ -173,11 +177,16 @@ body h1 {
     margin: 0;
     margin-right: .5rem;
   }
+  #header #nav .menu li a {
+    color: white;
+  }
 }
 
 @media screen and (min-width: 720px) {
   #header #nav {
-    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    width: 70%;
   }
 }
 
@@ -211,6 +220,7 @@ body h1 {
 }
 
 .containerHome .main h1 {
+  margin-top: 1rem;
   background-color: #ff8800;
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 700;
@@ -220,6 +230,7 @@ body h1 {
 }
 
 .containerHome .main p {
+  margin-top: .25rem;
   text-align: center;
   color: #2e4052;
 }
@@ -240,18 +251,32 @@ body h1 {
 }
 
 .containerMenu .category {
-  margin-bottom: 1rem;
-  padding: .5rem 1rem;
+  width: 100%;
   height: 2.5rem;
-  background-color: #ff8800;
+  padding: .5rem 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 400;
   color: white;
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 700;
+  background-color: #ff8800;
   text-transform: uppercase;
-  letter-spacing: 2px;
   border-radius: 15px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+  border: none;
+  box-shadow: none;
+  box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.1s ease-in;
   cursor: pointer;
+}
+
+.containerMenu .category:hover {
+  background: #ff941a;
+  box-shadow: 2px 2.5px 2.5px rgba(0, 0, 0, 0.3);
+}
+
+.containerMenu .category:active {
+  background: #e67a00;
+  box-shadow: 1px 1.5px 2px rgba(0, 0, 0, 0.3);
 }
 
 .dishes .dish {
@@ -289,8 +314,16 @@ body h1 {
   background-color: #ff8800;
 }
 
+@media screen and (min-width: 720px) {
+  .dishes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 .containerContact .container__contact__info {
   width: 90%;
+  max-width: 400px;
   margin: 0 auto;
   text-align: left;
 }
@@ -350,5 +383,60 @@ body h1 {
 .containerContact .social__media__icons > * i {
   width: 16px;
   height: 16px;
+}
+
+.showDish {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(45, 64, 82, 0.9);
+  padding: 2rem 1rem;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.showDish .container__dish {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.showDish .container__dish > * {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.showDish .container__dish .container__img {
+  width: 80%;
+  margin: 0 auto 1rem auto;
+}
+
+.showDish .container__dish .container__img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.showDish .container__dish .container__img img {
+  border-radius: 30px;
+  box-shadow: 0 0 5px rgba(240, 240, 240, 0.8);
+}
+
+.showDish .container__dish .name {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+}
+
+.showDish .container__dish .ingredients {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 90%;
+  height: 200px;
+  margin: 0 auto;
+  list-style: none;
 }
 

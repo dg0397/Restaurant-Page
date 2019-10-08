@@ -1,6 +1,7 @@
 .containerContact{
     .container__contact__info{
         width: 90%;
+        max-width: 400px;
         margin: 0 auto;
         text-align: left;
         @include logo(50%,200px,150px);

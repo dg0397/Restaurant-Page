@@ -3,18 +3,7 @@
     width: 80%;
     max-width: 320px;
     .category{
-        margin-bottom: 1rem;
-        padding: .5rem 1rem;
-        height: 2.5rem;
-        background-color: $yellow-dark;
-        color:white;
-        font-family: $font-heading;
-        font-weight: $font-w-heading-bold;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        border-radius: 15px;
-        box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
-        cursor: pointer;
+        @include btn($yellow-dark,white,$yellow-light,$yellow-superdark,$font-w-body-normal)
     }
 }
 .dishes{
@@ -44,5 +33,9 @@
          background-color: $yellow-dark;
 
         }
+    }
+    @media screen and(min-width:720px) {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
     }
 }

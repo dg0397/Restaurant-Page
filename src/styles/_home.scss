@@ -17,6 +17,7 @@
             @include image();
         }
         h1{
+            margin-top: 1rem;
             background-color: $yellow-dark;
             font-family: $font-heading;
             font-weight: $font-w-heading-bold;
@@ -25,6 +26,7 @@
             letter-spacing: 2px;
         }
         p{
+            margin-top: .25rem;
             text-align: center;
             color: $very-dark-blue;
         }

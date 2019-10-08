@@ -97,7 +97,7 @@
             box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.212);
             transition: all 1s ease;
             transform: translateY(-200%);
-
+            max-width: 360px;
             li {
                 width: 80%;
                 margin: 0 auto;
@@ -132,12 +132,17 @@
                 li {
                     margin: 0;
                     margin-right: .5rem;
+                    a{
+                        color:white
+                    }
                 }
             }
         }
 
         @media screen and(min-width:720px) {
-            width: 50%;
+            display: flex;
+            justify-content: flex-end;
+            width: 70%;
         }
     }
 
