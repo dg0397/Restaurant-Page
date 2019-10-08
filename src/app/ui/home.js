@@ -1,4 +1,4 @@
-import {createElement,addElement,createList} from "./cook";
+import {createElement,addElement} from "./cook";
 
 export function home() {
     const containerHome = createElement("div",{"class":"containerHome"});

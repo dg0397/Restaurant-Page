@@ -499,6 +499,12 @@ body {
   box-shadow: 0 0 5px rgba(240, 240, 240, 0.8);
 }
 
+@media screen and (min-width: 720px) {
+  .showDish .container__dish .container__img {
+    width: 50%;
+  }
+}
+
 .showDish .container__dish .name {
   text-transform: uppercase;
   letter-spacing: 2px;

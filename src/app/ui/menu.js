@@ -1,4 +1,4 @@
-import {createElement,addElement,createList,createMenu,removeElement,createMenuDishes,createDish} from "./cook";
+import {createElement,createMenu,removeElement,createMenuDishes,createDish} from "./cook";
 
 class Menu{
     constructor(){
