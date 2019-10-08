@@ -15,6 +15,48 @@
             width: 90%;
             margin:  0 auto;
         }
+        .icon{
+            
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            background: $light-grayish-blue;
+            
+            .btnHamburger {
+                width: 20px;
+                height: 3px;
+                background: rgba(0, 0, 0, 0);
+                position: absolute;
+                top: 50%;
+                right: 0;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+                transition: .5s;
+                border-radius: 10px;
+            }
+
+            .btnHamburger::before,
+            .btnHamburger::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                width: 22px;
+                height: 3px;
+                background: $light-grayish-blue;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+                transition: .5s;
+                border-radius: 10px;
+            }
+
+            .btnHamburger::before {
+                transform: rotate(45deg);
+            }
+
+            .btnHamburger::after {
+                transform: rotate(135deg);
+            }
+        }
         .container__img{
             width: 80%;
             margin: 0 auto 1rem auto;
@@ -30,12 +72,16 @@
             font-family: $font-heading;
             font-weight: $font-w-heading-bold;
         }
+        p{
+            font-style: italic;
+            text-decoration: underline;
+        }
         .ingredients{
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
             width: 90%;
-            height: 200px;
+            height: 250px;
             margin: 0 auto;
             list-style: none;
         }

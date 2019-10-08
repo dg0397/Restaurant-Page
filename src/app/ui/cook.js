@@ -89,7 +89,9 @@ export function createMenuDishes(content,parent){
 }
 
 export function createDish(content,parent){
-    
+    let icon = createElement("div",{"class":"icon"});
+    let btn = createElement("div",{"class":"btnHamburger"});
+
     let containerDish = createElement("div",{"class":"container__dish"})
     let containerImg = createElement("div",{"class":"container__img"});
     let img = createElement("img",{"src":content.strMealThumb});
@@ -105,7 +107,9 @@ export function createDish(content,parent){
     }
 
     addElement(img,containerImg);
+    addElement(btn,icon);
 
+    addElement(icon,containerDish);
     addElement(containerImg,containerDish);
     addElement(name,containerDish);
     addElement(p,containerDish);

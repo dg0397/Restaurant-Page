@@ -20,6 +20,7 @@ export class UI {
         this.containerDishes; // container of dishes;
         this.dishes;
         this.flag = true;
+        this.flagDish = true;
         this.dish;
     }
     setup(){
@@ -83,12 +84,20 @@ export class UI {
               this.containerDishes.querySelectorAll("button").
                     forEach( dish => { 
                         dish.addEventListener("click", async (e) =>{
-                            let dish = await connection.fetchDish(e.target.id);
-                            console.log(dish);
+                            if(this.flagDish){
+                                this.flagDish = false;
+                                let dish = await connection.fetchDish(e.target.id);
+                                console.log(dish);
 
-                            this.dish = menu.renderDish(dish);
+                                this.dish = menu.renderDish(dish);
 
-                            addElement(this.dish,this.content);
+                                addElement(this.dish,this.content);
+
+                                this.dish.querySelector(".icon").addEventListener("click",()=> {
+                                    removeElement(this.dish);
+                                    this.flagDish = true;
+                                })
+                            }else{return}
                         })
                     });
             });

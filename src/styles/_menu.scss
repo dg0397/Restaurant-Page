@@ -33,6 +33,14 @@
          background-color: $yellow-dark;
 
         }
+        .button{
+            @include btn($yellow-dark,white,$yellow-light,$yellow-superdark,$font-w-heading-bold);
+            width: 50%;
+            border-radius: 5px;
+            margin: .5rem auto;
+            font-family: $font-heading;
+            font-size: 1rem;
+        }
     }
     @media screen and(min-width:720px) {
         display: grid;
